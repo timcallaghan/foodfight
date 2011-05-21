@@ -133,11 +133,38 @@ namespace FoodFightSilverlightClient {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Equipment Tags.
+        /// </summary>
+        public static string EquipmentTagsPageTitle {
+            get {
+                return ResourceManager.GetString("EquipmentTagsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Food Groups.
+        /// </summary>
+        public static string FoodGroupsPageTitle {
+            get {
+                return ResourceManager.GetString("FoodGroupsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string HomePageTitle {
             get {
                 return ResourceManager.GetString("HomePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredients.
+        /// </summary>
+        public static string IngredientsPageTitle {
+            get {
+                return ResourceManager.GetString("IngredientsPageTitle", resourceCulture);
             }
         }
         
@@ -219,6 +246,24 @@ namespace FoodFightSilverlightClient {
         public static string RememberMeLabel {
             get {
                 return ResourceManager.GetString("RememberMeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to States.
+        /// </summary>
+        public static string StatesPageTitle {
+            get {
+                return ResourceManager.GetString("StatesPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string TagsPageTitle {
+            get {
+                return ResourceManager.GetString("TagsPageTitle", resourceCulture);
             }
         }
         

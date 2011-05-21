@@ -181,4 +181,19 @@
   <data name="UnitsPageTitle" xml:space="preserve">
     <value>Units</value>
   </data>
+  <data name="EquipmentTagsPageTitle" xml:space="preserve">
+    <value>Equipment Tags</value>
+  </data>
+  <data name="FoodGroupsPageTitle" xml:space="preserve">
+    <value>Food Groups</value>
+  </data>
+  <data name="IngredientsPageTitle" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="StatesPageTitle" xml:space="preserve">
+    <value>States</value>
+  </data>
+  <data name="TagsPageTitle" xml:space="preserve">
+    <value>Tags</value>
+  </data>
 </root>

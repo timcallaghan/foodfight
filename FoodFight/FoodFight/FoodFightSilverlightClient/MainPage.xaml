@@ -48,6 +48,31 @@
 
                         <Rectangle x:Name="Divider2" Style="{StaticResource DividerStyle}"/>
 
+                        <HyperlinkButton x:Name="Tags" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Tags" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.TagsPageTitle, Source={StaticResource ResourceWrapper}}"/>
+
+                        <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}"/>
+
+                        <HyperlinkButton x:Name="States" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/States" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.StatesPageTitle, Source={StaticResource ResourceWrapper}}"/>
+
+                        <Rectangle x:Name="Divider4" Style="{StaticResource DividerStyle}"/>
+
+                        <HyperlinkButton x:Name="Ingredients" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Ingredients" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.IngredientsPageTitle, Source={StaticResource ResourceWrapper}}"/>
+
+                        <Rectangle x:Name="Divider5" Style="{StaticResource DividerStyle}"/>
+
+                        <HyperlinkButton x:Name="FoodGroups" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/FoodGroups" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.FoodGroupsPageTitle, Source={StaticResource ResourceWrapper}}"/>
+
+                        <Rectangle x:Name="Divider6" Style="{StaticResource DividerStyle}"/>
+
+                        <HyperlinkButton x:Name="EquipmentTags" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/EquipmentTags" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.EquipmentTagsPageTitle, Source={StaticResource ResourceWrapper}}"/>
+
+                        <Rectangle x:Name="Divider7" Style="{StaticResource DividerStyle}"/>
+
                         <HyperlinkButton x:Name="Link2" Style="{StaticResource LinkStyle}" 
                                      NavigateUri="/About" TargetName="ContentFrame" Content="{Binding Path=ApplicationStrings.AboutPageTitle, Source={StaticResource ResourceWrapper}}"/>
 

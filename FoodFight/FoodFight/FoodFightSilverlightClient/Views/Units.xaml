@@ -12,6 +12,7 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
         <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Unit, CreateList=true}" Height="0" LoadedData="unitDomainDataSource_LoadedData" Name="unitDomainDataSource" QueryName="GetUnitsQuery" Width="0">
             <riaControls:DomainDataSource.DomainContext>
                 <my:FoodFightDomainContext />

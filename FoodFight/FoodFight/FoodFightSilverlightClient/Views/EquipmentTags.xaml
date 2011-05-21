@@ -1,0 +1,34 @@
+﻿<navigation:Page x:Class="FoodFightSilverlightClient.Views.EquipmentTags" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Equipment Tags Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:FoodFightSilverlightClient.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Height="30" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Content="Add New Equipment Tag" Click="btnAddEquipmentTag_Click" Margin="3" x:Name="btnAddEquipmentTag"></Button>
+            <Button Content="Save Changes" Click="btnSaveEquipmentTag_Click" Margin="3" x:Name="btnSaveEquipmentTag"></Button>
+            <Button Content="Delete Selected Equipment Tag" Click="btnDeleteEquipmentTag_Click" Margin="3" x:Name="btnDeleteEquipmentTag"></Button>
+            <TextBlock x:Name="ChangeText" VerticalAlignment="Center" Width="Auto"></TextBlock>
+        </StackPanel>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:EquipmentTag, CreateList=true}" Height="0" LoadedData="equipmentTagDomainDataSource_LoadedData" Name="equipmentTagDomainDataSource" QueryName="GetEquipmentTagsQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:FoodFightDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:DataGrid AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=equipmentTagDomainDataSource, Path=Data}" Margin="0" Name="equipmentTagDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="equipmentTagIDColumn" Binding="{Binding Path=EquipmentTagID, Mode=OneWay}" Header="Equipment Tag ID" IsReadOnly="True" Width="SizeToCells" MinWidth="120"/>
+                <sdk:DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=Name}" Header="Name" Width="SizeToCells" MinWidth="200"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>

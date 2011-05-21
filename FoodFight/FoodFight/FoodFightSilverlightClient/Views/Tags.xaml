@@ -1,0 +1,34 @@
+﻿<navigation:Page x:Class="FoodFightSilverlightClient.Views.Tags" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Tags Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:FoodFightSilverlightClient.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Height="30" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Content="Add New Tag" Click="btnAddTag_Click" Margin="3" x:Name="btnAddTag"></Button>
+            <Button Content="Save Changes" Click="btnSaveTag_Click" Margin="3" x:Name="btnSaveTag"></Button>
+            <Button Content="Delete Selected Tag" Click="btnDeleteTag_Click" Margin="3" x:Name="btnDeleteTag"></Button>
+            <TextBlock x:Name="ChangeText" VerticalAlignment="Center" Width="Auto"></TextBlock>
+        </StackPanel>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Tag, CreateList=true}" Height="0" LoadedData="tagDomainDataSource_LoadedData" Name="tagDomainDataSource" QueryName="GetTagsQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:FoodFightDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:DataGrid AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=tagDomainDataSource, Path=Data}" Name="tagDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="tagIDColumn" Binding="{Binding Path=TagID, Mode=OneWay}" Header="Tag ID" IsReadOnly="True" Width="SizeToCells" MinWidth="60"/>
+                <sdk:DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=Name}" Header="Name" Width="SizeToCells" MinWidth="200"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>

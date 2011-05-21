@@ -1,0 +1,34 @@
+﻿<navigation:Page x:Class="FoodFightSilverlightClient.Views.States" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="States Page" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:FoodFightSilverlightClient.Web" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Height="30" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Content="Add New State" Click="btnAddState_Click" Margin="3" x:Name="btnAddState"></Button>
+            <Button Content="Save Changes" Click="btnSaveState_Click" Margin="3" x:Name="btnSaveState"></Button>
+            <Button Content="Delete Selected State" Click="btnDeleteState_Click" Margin="3" x:Name="btnDeleteState"></Button>
+            <TextBlock x:Name="ChangeText" VerticalAlignment="Center" Width="Auto"></TextBlock>
+        </StackPanel>
+        <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:State, CreateList=true}" Height="0" LoadedData="stateDomainDataSource_LoadedData" Name="stateDomainDataSource" QueryName="GetStatesQuery" Width="0">
+            <riaControls:DomainDataSource.DomainContext>
+                <my:FoodFightDomainContext />
+            </riaControls:DomainDataSource.DomainContext>
+        </riaControls:DomainDataSource>
+        <sdk:DataGrid AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=stateDomainDataSource, Path=Data}" Name="stateDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn x:Name="stateIDColumn" Binding="{Binding Path=StateID, Mode=OneWay}" Header="State ID" IsReadOnly="True" Width="SizeToCells" MinWidth="60"/>
+                <sdk:DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=Description}" Header="Description" Width="SizeToCells" MinWidth="200"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>
