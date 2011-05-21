@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FoodFightModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FoodFightModelStoreContainer">
+          <EntitySet Name="EquipmentTag" EntityType="FoodFightModel.Store.EquipmentTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FoodGroup" EntityType="FoodFightModel.Store.FoodGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ingredient" EntityType="FoodFightModel.Store.Ingredient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Recipe" EntityType="FoodFightModel.Store.Recipe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecipeEquipmentTag" EntityType="FoodFightModel.Store.RecipeEquipmentTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecipeFoodGroup" EntityType="FoodFightModel.Store.RecipeFoodGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecipeIngredient" EntityType="FoodFightModel.Store.RecipeIngredient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecipeStep" EntityType="FoodFightModel.Store.RecipeStep" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecipeTag" EntityType="FoodFightModel.Store.RecipeTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="FoodFightModel.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="FoodFightModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Unit" EntityType="FoodFightModel.Store.Unit" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_RecipeEquipmentTag_EquipmentTag" Association="FoodFightModel.Store.FK_RecipeEquipmentTag_EquipmentTag">
+            <End Role="EquipmentTag" EntitySet="EquipmentTag" />
+            <End Role="RecipeEquipmentTag" EntitySet="RecipeEquipmentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeEquipmentTag_Recipe" Association="FoodFightModel.Store.FK_RecipeEquipmentTag_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeEquipmentTag" EntitySet="RecipeEquipmentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeFoodGroup_FoodGroup" Association="FoodFightModel.Store.FK_RecipeFoodGroup_FoodGroup">
+            <End Role="FoodGroup" EntitySet="FoodGroup" />
+            <End Role="RecipeFoodGroup" EntitySet="RecipeFoodGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeFoodGroup_Recipe" Association="FoodFightModel.Store.FK_RecipeFoodGroup_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeFoodGroup" EntitySet="RecipeFoodGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Ingredient" Association="FoodFightModel.Store.FK_RecipeIngredient_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Recipe" Association="FoodFightModel.Store.FK_RecipeIngredient_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_RecipeIngredient" Association="FoodFightModel.Store.FK_RecipeIngredient_RecipeIngredient">
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredient" />
+            <End Role="RecipeIngredient1" EntitySet="RecipeIngredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_State" Association="FoodFightModel.Store.FK_RecipeIngredient_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Unit" Association="FoodFightModel.Store.FK_RecipeIngredient_Unit">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeStep_Recipe" Association="FoodFightModel.Store.FK_RecipeStep_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeStep" EntitySet="RecipeStep" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeTag_Recipe" Association="FoodFightModel.Store.FK_RecipeTag_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeTag" EntitySet="RecipeTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeTag_Tag" Association="FoodFightModel.Store.FK_RecipeTag_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="RecipeTag" EntitySet="RecipeTag" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EquipmentTag">
+          <Key>
+            <PropertyRef Name="EquipmentTagID" />
+          </Key>
+          <Property Name="EquipmentTagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="FoodGroup">
+          <Key>
+            <PropertyRef Name="FoodGroupID" />
+          </Key>
+          <Property Name="FoodGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeID" />
+          </Key>
+          <Property Name="RecipeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="CookingTime" Type="time" />
+          <Property Name="Serves" Type="int" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="RecipeEquipmentTag">
+          <Key>
+            <PropertyRef Name="RecipeEquipmentTagID" />
+          </Key>
+          <Property Name="RecipeEquipmentTagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="EquipmentTagID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecipeFoodGroup">
+          <Key>
+            <PropertyRef Name="RecipeFoodGroupID" />
+          </Key>
+          <Property Name="RecipeFoodGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="FoodGroupID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="RecipeIngredient">
+          <Key>
+            <PropertyRef Name="RecipeIngredientID" />
+          </Key>
+          <Property Name="RecipeIngredientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="IngredientID" Type="int" Nullable="false" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="AliasForRecipeIngredientID" Type="int" />
+        </EntityType>
+        <EntityType Name="RecipeStep">
+          <Key>
+            <PropertyRef Name="RecipeStepID" />
+          </Key>
+          <Property Name="RecipeStepID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="StepNumber" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="RecipeTag">
+          <Key>
+            <PropertyRef Name="RecipeTagID" />
+          </Key>
+          <Property Name="RecipeTagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="TagID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <Association Name="FK_RecipeEquipmentTag_EquipmentTag">
+          <End Role="EquipmentTag" Type="FoodFightModel.Store.EquipmentTag" Multiplicity="1" />
+          <End Role="RecipeEquipmentTag" Type="FoodFightModel.Store.RecipeEquipmentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentTag">
+              <PropertyRef Name="EquipmentTagID" />
+            </Principal>
+            <Dependent Role="RecipeEquipmentTag">
+              <PropertyRef Name="EquipmentTagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeEquipmentTag_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Store.Recipe" Multiplicity="1" />
+          <End Role="RecipeEquipmentTag" Type="FoodFightModel.Store.RecipeEquipmentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeEquipmentTag">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeFoodGroup_FoodGroup">
+          <End Role="FoodGroup" Type="FoodFightModel.Store.FoodGroup" Multiplicity="1" />
+          <End Role="RecipeFoodGroup" Type="FoodFightModel.Store.RecipeFoodGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodGroup">
+              <PropertyRef Name="FoodGroupID" />
+            </Principal>
+            <Dependent Role="RecipeFoodGroup">
+              <PropertyRef Name="FoodGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeFoodGroup_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Store.Recipe" Multiplicity="1" />
+          <End Role="RecipeFoodGroup" Type="FoodFightModel.Store.RecipeFoodGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeFoodGroup">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Ingredient">
+          <End Role="Ingredient" Type="FoodFightModel.Store.Ingredient" Multiplicity="1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Store.Recipe" Multiplicity="1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_RecipeIngredient">
+          <End Role="RecipeIngredient" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="0..1" />
+          <End Role="RecipeIngredient1" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecipeIngredient">
+              <PropertyRef Name="RecipeIngredientID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient1">
+              <PropertyRef Name="AliasForRecipeIngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_State">
+          <End Role="State" Type="FoodFightModel.Store.State" Multiplicity="0..1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Unit">
+          <End Role="Unit" Type="FoodFightModel.Store.Unit" Multiplicity="0..1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.Store.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeStep_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Store.Recipe" Multiplicity="1" />
+          <End Role="RecipeStep" Type="FoodFightModel.Store.RecipeStep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeStep">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeTag_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Store.Recipe" Multiplicity="1" />
+          <End Role="RecipeTag" Type="FoodFightModel.Store.RecipeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeTag">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeTag_Tag">
+          <End Role="Tag" Type="FoodFightModel.Store.Tag" Multiplicity="1" />
+          <End Role="RecipeTag" Type="FoodFightModel.Store.RecipeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagID" />
+            </Principal>
+            <Dependent Role="RecipeTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FoodFightModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FoodFightEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EquipmentTags" EntityType="FoodFightModel.EquipmentTag" />
+          <EntitySet Name="FoodGroups" EntityType="FoodFightModel.FoodGroup" />
+          <EntitySet Name="Ingredients" EntityType="FoodFightModel.Ingredient" />
+          <EntitySet Name="Recipes" EntityType="FoodFightModel.Recipe" />
+          <EntitySet Name="RecipeEquipmentTags" EntityType="FoodFightModel.RecipeEquipmentTag" />
+          <EntitySet Name="RecipeFoodGroups" EntityType="FoodFightModel.RecipeFoodGroup" />
+          <EntitySet Name="RecipeIngredients" EntityType="FoodFightModel.RecipeIngredient" />
+          <EntitySet Name="RecipeSteps" EntityType="FoodFightModel.RecipeStep" />
+          <EntitySet Name="RecipeTags" EntityType="FoodFightModel.RecipeTag" />
+          <EntitySet Name="States" EntityType="FoodFightModel.State" />
+          <EntitySet Name="Tags" EntityType="FoodFightModel.Tag" />
+          <EntitySet Name="Units" EntityType="FoodFightModel.Unit" />
+          <AssociationSet Name="FK_RecipeEquipmentTag_EquipmentTag" Association="FoodFightModel.FK_RecipeEquipmentTag_EquipmentTag">
+            <End Role="EquipmentTag" EntitySet="EquipmentTags" />
+            <End Role="RecipeEquipmentTag" EntitySet="RecipeEquipmentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeFoodGroup_FoodGroup" Association="FoodFightModel.FK_RecipeFoodGroup_FoodGroup">
+            <End Role="FoodGroup" EntitySet="FoodGroups" />
+            <End Role="RecipeFoodGroup" EntitySet="RecipeFoodGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Ingredient" Association="FoodFightModel.FK_RecipeIngredient_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeEquipmentTag_Recipe" Association="FoodFightModel.FK_RecipeEquipmentTag_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="RecipeEquipmentTag" EntitySet="RecipeEquipmentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeFoodGroup_Recipe" Association="FoodFightModel.FK_RecipeFoodGroup_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="RecipeFoodGroup" EntitySet="RecipeFoodGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Recipe" Association="FoodFightModel.FK_RecipeIngredient_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeStep_Recipe" Association="FoodFightModel.FK_RecipeStep_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="RecipeStep" EntitySet="RecipeSteps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeTag_Recipe" Association="FoodFightModel.FK_RecipeTag_Recipe">
+            <End Role="Recipe" EntitySet="Recipes" />
+            <End Role="RecipeTag" EntitySet="RecipeTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_RecipeIngredient" Association="FoodFightModel.FK_RecipeIngredient_RecipeIngredient">
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+            <End Role="RecipeIngredient1" EntitySet="RecipeIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_State" Association="FoodFightModel.FK_RecipeIngredient_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeIngredient_Unit" Association="FoodFightModel.FK_RecipeIngredient_Unit">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="RecipeIngredient" EntitySet="RecipeIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecipeTag_Tag" Association="FoodFightModel.FK_RecipeTag_Tag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="RecipeTag" EntitySet="RecipeTags" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EquipmentTag">
+          <Key>
+            <PropertyRef Name="EquipmentTagID" />
+          </Key>
+          <Property Name="EquipmentTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeEquipmentTags" Relationship="FoodFightModel.FK_RecipeEquipmentTag_EquipmentTag" FromRole="EquipmentTag" ToRole="RecipeEquipmentTag" />
+        </EntityType>
+        <EntityType Name="FoodGroup">
+          <Key>
+            <PropertyRef Name="FoodGroupID" />
+          </Key>
+          <Property Name="FoodGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeFoodGroups" Relationship="FoodFightModel.FK_RecipeFoodGroup_FoodGroup" FromRole="FoodGroup" ToRole="RecipeFoodGroup" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeIngredients" Relationship="FoodFightModel.FK_RecipeIngredient_Ingredient" FromRole="Ingredient" ToRole="RecipeIngredient" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="RecipeID" />
+          </Key>
+          <Property Name="RecipeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="CookingTime" Type="Time" />
+          <Property Name="Serves" Type="Int32" Nullable="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="RecipeEquipmentTags" Relationship="FoodFightModel.FK_RecipeEquipmentTag_Recipe" FromRole="Recipe" ToRole="RecipeEquipmentTag" />
+          <NavigationProperty Name="RecipeFoodGroups" Relationship="FoodFightModel.FK_RecipeFoodGroup_Recipe" FromRole="Recipe" ToRole="RecipeFoodGroup" />
+          <NavigationProperty Name="RecipeIngredients" Relationship="FoodFightModel.FK_RecipeIngredient_Recipe" FromRole="Recipe" ToRole="RecipeIngredient" />
+          <NavigationProperty Name="RecipeSteps" Relationship="FoodFightModel.FK_RecipeStep_Recipe" FromRole="Recipe" ToRole="RecipeStep" />
+          <NavigationProperty Name="RecipeTags" Relationship="FoodFightModel.FK_RecipeTag_Recipe" FromRole="Recipe" ToRole="RecipeTag" />
+        </EntityType>
+        <EntityType Name="RecipeEquipmentTag">
+          <Key>
+            <PropertyRef Name="RecipeEquipmentTagID" />
+          </Key>
+          <Property Name="RecipeEquipmentTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="EquipmentTagID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EquipmentTag" Relationship="FoodFightModel.FK_RecipeEquipmentTag_EquipmentTag" FromRole="RecipeEquipmentTag" ToRole="EquipmentTag" />
+          <NavigationProperty Name="Recipe" Relationship="FoodFightModel.FK_RecipeEquipmentTag_Recipe" FromRole="RecipeEquipmentTag" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="RecipeFoodGroup">
+          <Key>
+            <PropertyRef Name="RecipeFoodGroupID" />
+          </Key>
+          <Property Name="RecipeFoodGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="FoodGroupID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <NavigationProperty Name="FoodGroup" Relationship="FoodFightModel.FK_RecipeFoodGroup_FoodGroup" FromRole="RecipeFoodGroup" ToRole="FoodGroup" />
+          <NavigationProperty Name="Recipe" Relationship="FoodFightModel.FK_RecipeFoodGroup_Recipe" FromRole="RecipeFoodGroup" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="RecipeIngredient">
+          <Key>
+            <PropertyRef Name="RecipeIngredientID" />
+          </Key>
+          <Property Name="RecipeIngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="IngredientID" Type="Int32" Nullable="false" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="AliasForRecipeIngredientID" Type="Int32" />
+          <NavigationProperty Name="Ingredient" Relationship="FoodFightModel.FK_RecipeIngredient_Ingredient" FromRole="RecipeIngredient" ToRole="Ingredient" />
+          <NavigationProperty Name="Recipe" Relationship="FoodFightModel.FK_RecipeIngredient_Recipe" FromRole="RecipeIngredient" ToRole="Recipe" />
+          <NavigationProperty Name="RecipeIngredient1" Relationship="FoodFightModel.FK_RecipeIngredient_RecipeIngredient" FromRole="RecipeIngredient" ToRole="RecipeIngredient1" />
+          <NavigationProperty Name="RecipeIngredient2" Relationship="FoodFightModel.FK_RecipeIngredient_RecipeIngredient" FromRole="RecipeIngredient1" ToRole="RecipeIngredient" />
+          <NavigationProperty Name="State" Relationship="FoodFightModel.FK_RecipeIngredient_State" FromRole="RecipeIngredient" ToRole="State" />
+          <NavigationProperty Name="Unit" Relationship="FoodFightModel.FK_RecipeIngredient_Unit" FromRole="RecipeIngredient" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="RecipeStep">
+          <Key>
+            <PropertyRef Name="RecipeStepID" />
+          </Key>
+          <Property Name="RecipeStepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="StepNumber" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Recipe" Relationship="FoodFightModel.FK_RecipeStep_Recipe" FromRole="RecipeStep" ToRole="Recipe" />
+        </EntityType>
+        <EntityType Name="RecipeTag">
+          <Key>
+            <PropertyRef Name="RecipeTagID" />
+          </Key>
+          <Property Name="RecipeTagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="TagID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Recipe" Relationship="FoodFightModel.FK_RecipeTag_Recipe" FromRole="RecipeTag" ToRole="Recipe" />
+          <NavigationProperty Name="Tag" Relationship="FoodFightModel.FK_RecipeTag_Tag" FromRole="RecipeTag" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeIngredients" Relationship="FoodFightModel.FK_RecipeIngredient_State" FromRole="State" ToRole="RecipeIngredient" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeTags" Relationship="FoodFightModel.FK_RecipeTag_Tag" FromRole="Tag" ToRole="RecipeTag" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RecipeIngredients" Relationship="FoodFightModel.FK_RecipeIngredient_Unit" FromRole="Unit" ToRole="RecipeIngredient" />
+        </EntityType>
+        <Association Name="FK_RecipeEquipmentTag_EquipmentTag">
+          <End Role="EquipmentTag" Type="FoodFightModel.EquipmentTag" Multiplicity="1" />
+          <End Role="RecipeEquipmentTag" Type="FoodFightModel.RecipeEquipmentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentTag">
+              <PropertyRef Name="EquipmentTagID" />
+            </Principal>
+            <Dependent Role="RecipeEquipmentTag">
+              <PropertyRef Name="EquipmentTagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeFoodGroup_FoodGroup">
+          <End Role="FoodGroup" Type="FoodFightModel.FoodGroup" Multiplicity="1" />
+          <End Role="RecipeFoodGroup" Type="FoodFightModel.RecipeFoodGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodGroup">
+              <PropertyRef Name="FoodGroupID" />
+            </Principal>
+            <Dependent Role="RecipeFoodGroup">
+              <PropertyRef Name="FoodGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Ingredient">
+          <End Role="Ingredient" Type="FoodFightModel.Ingredient" Multiplicity="1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeEquipmentTag_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Recipe" Multiplicity="1" />
+          <End Role="RecipeEquipmentTag" Type="FoodFightModel.RecipeEquipmentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeEquipmentTag">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeFoodGroup_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Recipe" Multiplicity="1" />
+          <End Role="RecipeFoodGroup" Type="FoodFightModel.RecipeFoodGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeFoodGroup">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Recipe" Multiplicity="1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeStep_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Recipe" Multiplicity="1" />
+          <End Role="RecipeStep" Type="FoodFightModel.RecipeStep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeStep">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeTag_Recipe">
+          <End Role="Recipe" Type="FoodFightModel.Recipe" Multiplicity="1" />
+          <End Role="RecipeTag" Type="FoodFightModel.RecipeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeTag">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_RecipeIngredient">
+          <End Role="RecipeIngredient" Type="FoodFightModel.RecipeIngredient" Multiplicity="0..1" />
+          <End Role="RecipeIngredient1" Type="FoodFightModel.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecipeIngredient">
+              <PropertyRef Name="RecipeIngredientID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient1">
+              <PropertyRef Name="AliasForRecipeIngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_State">
+          <End Role="State" Type="FoodFightModel.State" Multiplicity="0..1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeIngredient_Unit">
+          <End Role="Unit" Type="FoodFightModel.Unit" Multiplicity="0..1" />
+          <End Role="RecipeIngredient" Type="FoodFightModel.RecipeIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="RecipeIngredient">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecipeTag_Tag">
+          <End Role="Tag" Type="FoodFightModel.Tag" Multiplicity="1" />
+          <End Role="RecipeTag" Type="FoodFightModel.RecipeTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagID" />
+            </Principal>
+            <Dependent Role="RecipeTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FoodFightModelStoreContainer" CdmEntityContainer="FoodFightEntities">
+          <EntitySetMapping Name="EquipmentTags"><EntityTypeMapping TypeName="FoodFightModel.EquipmentTag"><MappingFragment StoreEntitySet="EquipmentTag">
+            <ScalarProperty Name="EquipmentTagID" ColumnName="EquipmentTagID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FoodGroups"><EntityTypeMapping TypeName="FoodFightModel.FoodGroup"><MappingFragment StoreEntitySet="FoodGroup">
+            <ScalarProperty Name="FoodGroupID" ColumnName="FoodGroupID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ingredients"><EntityTypeMapping TypeName="FoodFightModel.Ingredient"><MappingFragment StoreEntitySet="Ingredient">
+            <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Recipes"><EntityTypeMapping TypeName="FoodFightModel.Recipe"><MappingFragment StoreEntitySet="Recipe">
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="CookingTime" ColumnName="CookingTime" />
+            <ScalarProperty Name="Serves" ColumnName="Serves" />
+            <ScalarProperty Name="Picture" ColumnName="Picture" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RecipeEquipmentTags"><EntityTypeMapping TypeName="FoodFightModel.RecipeEquipmentTag"><MappingFragment StoreEntitySet="RecipeEquipmentTag">
+            <ScalarProperty Name="RecipeEquipmentTagID" ColumnName="RecipeEquipmentTagID" />
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="EquipmentTagID" ColumnName="EquipmentTagID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RecipeFoodGroups"><EntityTypeMapping TypeName="FoodFightModel.RecipeFoodGroup"><MappingFragment StoreEntitySet="RecipeFoodGroup">
+            <ScalarProperty Name="RecipeFoodGroupID" ColumnName="RecipeFoodGroupID" />
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="FoodGroupID" ColumnName="FoodGroupID" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RecipeIngredients"><EntityTypeMapping TypeName="FoodFightModel.RecipeIngredient"><MappingFragment StoreEntitySet="RecipeIngredient">
+            <ScalarProperty Name="RecipeIngredientID" ColumnName="RecipeIngredientID" />
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+            <ScalarProperty Name="AliasForRecipeIngredientID" ColumnName="AliasForRecipeIngredientID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RecipeSteps"><EntityTypeMapping TypeName="FoodFightModel.RecipeStep"><MappingFragment StoreEntitySet="RecipeStep">
+            <ScalarProperty Name="RecipeStepID" ColumnName="RecipeStepID" />
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="StepNumber" ColumnName="StepNumber" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Picture" ColumnName="Picture" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RecipeTags"><EntityTypeMapping TypeName="FoodFightModel.RecipeTag"><MappingFragment StoreEntitySet="RecipeTag">
+            <ScalarProperty Name="RecipeTagID" ColumnName="RecipeTagID" />
+            <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+            <ScalarProperty Name="TagID" ColumnName="TagID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="States"><EntityTypeMapping TypeName="FoodFightModel.State"><MappingFragment StoreEntitySet="State">
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tags"><EntityTypeMapping TypeName="FoodFightModel.Tag"><MappingFragment StoreEntitySet="Tag">
+            <ScalarProperty Name="TagID" ColumnName="TagID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Units"><EntityTypeMapping TypeName="FoodFightModel.Unit"><MappingFragment StoreEntitySet="Unit">
+            <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FoodFightModel">
+        <EntityTypeShape EntityType="FoodFightModel.EquipmentTag" Width="1.5" PointX="0.75" PointY="12.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.FoodGroup" Width="1.5" PointX="0.75" PointY="4.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.Ingredient" Width="1.5" PointX="3.75" PointY="1.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.Recipe" Width="1.5" PointX="0.75" PointY="7.375" Height="3.1340950520833344" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeEquipmentTag" Width="1.5" PointX="3" PointY="8" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeFoodGroup" Width="1.5" PointX="3" PointY="4.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeIngredient" Width="1.5" PointX="6" PointY="7.25" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeStep" Width="1.5" PointX="3" PointY="17.875" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeTag" Width="1.5" PointX="3" PointY="11" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.State" Width="1.5" PointX="3.75" PointY="14.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.Tag" Width="1.5" PointX="0.75" PointY="15.125" Height="1.5956835937500049" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.Unit" Width="1.5" PointX="3.75" PointY="21.5" Height="1.5956835937500031" IsExpanded="true" />
+        <AssociationConnector Association="FoodFightModel.FK_RecipeEquipmentTag_EquipmentTag" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.126152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="11.751152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="8.9901432291666659" />
+          <ConnectorPoint PointX="3" PointY="8.9901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeFoodGroup_FoodGroup" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.297841796875" />
+          <ConnectorPoint PointX="3" PointY="5.297841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Ingredient" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.90625" PointY="3.4706835937499996" />
+          <ConnectorPoint PointX="4.90625" PointY="10.4057421875" />
+          <ConnectorPoint PointX="4.994791666666667" PointY="10.4057421875" />
+          <ConnectorPoint PointX="5.161458333333333" PointY="10.4057421875" />
+          <ConnectorPoint PointX="6" PointY="10.4057421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeEquipmentTag_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.4325716145833329" />
+          <ConnectorPoint PointX="3" PointY="8.4325716145833329" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeFoodGroup_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.375" />
+          <ConnectorPoint PointX="2.625" PointY="7" />
+          <ConnectorPoint PointX="2.625" PointY="7.422587890625" />
+          <ConnectorPoint PointX="3" PointY="7.047587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.6875025000000008" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="7.6875025" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="7.6875025000000008" />
+          <ConnectorPoint PointX="4.994791666666667" PointY="7.6875025" />
+          <ConnectorPoint PointX="5.161458333333333" PointY="7.6875025000000008" />
+          <ConnectorPoint PointX="6" PointY="7.6875025000000008" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeStep_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2257692307692296" PointY="10.509095052083335" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="10.849400256215226" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="10.967251386412984" />
+          <ConnectorPoint PointX="2.8125" PointY="11.095825821314104" />
+          <ConnectorPoint PointX="2.8125" PointY="18.961293945312498" />
+          <ConnectorPoint PointX="3" PointY="18.961293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeTag_Recipe" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.452555590544874" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="10.768630025445994" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="10.886481155643752" />
+          <ConnectorPoint PointX="2.71875" PointY="10.921305590544874" />
+          <ConnectorPoint PointX="2.71875" PointY="10.717597153846153" />
+          <ConnectorPoint PointX="3.0011528461538459" PointY="11" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_RecipeIngredient" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.5319230769230767" PointY="10.768697916666667" />
+          <ConnectorPoint PointX="6.5319230769230767" PointY="11.018697916666667" />
+          <ConnectorPoint PointX="6.9784615384615378" PointY="11.018697916666667" />
+          <ConnectorPoint PointX="6.9784615384615378" PointY="10.768697916666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_State" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.078125" PointY="14.125" />
+          <ConnectorPoint PointX="5.078125" PointY="7.43749875" />
+          <ConnectorPoint PointX="6" PointY="7.43749875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Unit" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="22.297841796875" />
+          <ConnectorPoint PointX="6.2347090384615385" PointY="22.297841796875" />
+          <ConnectorPoint PointX="6.2347090384615385" PointY="10.768697916666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="FoodFightModel.FK_RecipeTag_Tag" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="16.251933593750003" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="16.251933593750003" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="16.251933593750003" />
+          <ConnectorPoint PointX="3.34375" PointY="16.251933593750003" />
+          <ConnectorPoint PointX="3.34375" PointY="12.980286458333332" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
