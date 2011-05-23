@@ -214,6 +214,15 @@ namespace FoodFightSilverlightClient {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recipes.
+        /// </summary>
+        public static string RecipesPageTitle {
+            get {
+                return ResourceManager.GetString("RecipesPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register now.
         /// </summary>
         public static string RegisterNowButton {

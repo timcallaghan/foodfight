@@ -12,7 +12,7 @@
     /// </summary>
     public partial class App : Application
     {
-        private BusyIndicator busyIndicator;
+        private FoodFightSilverlightClient.Controls.BusyIndicator busyIndicator;
 
         /// <summary>
         /// Creates a new <see cref="App"/> instance.
@@ -61,7 +61,7 @@
         /// </summary>
         protected virtual void InitializeRootVisual()
         {
-            this.busyIndicator = new BusyIndicator();
+            this.busyIndicator = new FoodFightSilverlightClient.Controls.BusyIndicator();
             this.busyIndicator.Content = new MainPage();
             this.busyIndicator.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             this.busyIndicator.VerticalContentAlignment = VerticalAlignment.Stretch;

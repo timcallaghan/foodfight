@@ -196,4 +196,7 @@
   <data name="TagsPageTitle" xml:space="preserve">
     <value>Tags</value>
   </data>
+  <data name="RecipesPageTitle" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
 </root>

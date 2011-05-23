@@ -26,7 +26,7 @@
         </riaControls:DomainDataSource>
         <sdk:DataGrid AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=equipmentTagDomainDataSource, Path=Data}" Margin="0" Name="equipmentTagDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
             <sdk:DataGrid.Columns>
-                <sdk:DataGridTextColumn x:Name="equipmentTagIDColumn" Binding="{Binding Path=EquipmentTagID, Mode=OneWay}" Header="Equipment Tag ID" IsReadOnly="True" Width="SizeToCells" MinWidth="120"/>
+                <sdk:DataGridTextColumn x:Name="equipmentTagIDColumn" Binding="{Binding Path=EquipmentTagID, Mode=OneWay}" Header="Equipment Tag ID" IsReadOnly="True" Width="SizeToCells" MinWidth="125"/>
                 <sdk:DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=Name}" Header="Name" Width="SizeToCells" MinWidth="200"/>
             </sdk:DataGrid.Columns>
         </sdk:DataGrid>

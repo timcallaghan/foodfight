@@ -740,10 +740,10 @@
         <EntityTypeShape EntityType="FoodFightModel.EquipmentTag" Width="1.5" PointX="0.75" PointY="12.125" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.FoodGroup" Width="1.5" PointX="0.75" PointY="4.125" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.Ingredient" Width="1.5" PointX="3.75" PointY="1.875" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodFightModel.Recipe" Width="1.5" PointX="0.75" PointY="7.375" Height="3.1340950520833344" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.Recipe" Width="1.75" PointX="0.5" PointY="7.375" Height="3.1340950520833344" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.RecipeEquipmentTag" Width="1.5" PointX="3" PointY="8" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.RecipeFoodGroup" Width="1.5" PointX="3" PointY="4.875" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodFightModel.RecipeIngredient" Width="1.5" PointX="6" PointY="7.25" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodFightModel.RecipeIngredient" Width="2.25" PointX="6" PointY="7.25" Height="3.5186979166666674" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.RecipeStep" Width="1.5" PointX="3" PointY="17.875" Height="2.172587890624996" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.RecipeTag" Width="1.5" PointX="3" PointY="11" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="FoodFightModel.State" Width="1.5" PointX="3.75" PointY="14.125" Height="1.5956835937499996" IsExpanded="true" />
@@ -752,74 +752,67 @@
         <AssociationConnector Association="FoodFightModel.FK_RecipeEquipmentTag_EquipmentTag" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="12.126152846153847" />
           <ConnectorPoint PointX="2.625" PointY="11.751152846153847" />
-          <ConnectorPoint PointX="2.625" PointY="8.9901432291666659" />
-          <ConnectorPoint PointX="3" PointY="8.9901432291666659" />
+          <ConnectorPoint PointX="2.625" PointY="9.2376810364583335" />
+          <ConnectorPoint PointX="3" PointY="9.2376810364583335" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeFoodGroup_FoodGroup" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="5.297841796875" />
           <ConnectorPoint PointX="3" PointY="5.297841796875" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Ingredient" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.90625" PointY="3.4706835937499996" />
-          <ConnectorPoint PointX="4.90625" PointY="10.4057421875" />
-          <ConnectorPoint PointX="4.994791666666667" PointY="10.4057421875" />
-          <ConnectorPoint PointX="5.161458333333333" PointY="10.4057421875" />
-          <ConnectorPoint PointX="6" PointY="10.4057421875" />
+          <ConnectorPoint PointX="4.8203125" PointY="3.4706835937499996" />
+          <ConnectorPoint PointX="4.8203125" PointY="10.374489687499999" />
+          <ConnectorPoint PointX="4.951822916666667" PointY="10.374489687499999" />
+          <ConnectorPoint PointX="5.118489583333333" PointY="10.374489687499999" />
+          <ConnectorPoint PointX="6" PointY="10.374489687499999" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeEquipmentTag_Recipe" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.4325716145833329" />
-          <ConnectorPoint PointX="3" PointY="8.4325716145833329" />
+          <ConnectorPoint PointX="2.25" PointY="8.5563405182291667" />
+          <ConnectorPoint PointX="3" PointY="8.5563405182291667" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeFoodGroup_Recipe" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.375" />
-          <ConnectorPoint PointX="2.625" PointY="7" />
-          <ConnectorPoint PointX="2.625" PointY="7.422587890625" />
-          <ConnectorPoint PointX="3" PointY="7.047587890625" />
+          <ConnectorPoint PointX="0.59375" PointY="7.375" />
+          <ConnectorPoint PointX="0.59375" PointY="6.4153857421875" />
+          <ConnectorPoint PointX="3" PointY="6.4153857421875" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Recipe" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.6875025000000008" />
-          <ConnectorPoint PointX="4.822916666666667" PointY="7.6875025" />
-          <ConnectorPoint PointX="4.989583333333333" PointY="7.6875025000000008" />
-          <ConnectorPoint PointX="4.994791666666667" PointY="7.6875025" />
-          <ConnectorPoint PointX="5.161458333333333" PointY="7.6875025000000008" />
-          <ConnectorPoint PointX="6" PointY="7.6875025000000008" />
+          <ConnectorPoint PointX="2.25" PointY="7.76562359375" />
+          <ConnectorPoint PointX="4.736979166666667" PointY="7.7656235937499991" />
+          <ConnectorPoint PointX="4.903645833333333" PointY="7.76562359375" />
+          <ConnectorPoint PointX="4.951822916666667" PointY="7.7656235937499991" />
+          <ConnectorPoint PointX="5.118489583333333" PointY="7.76562359375" />
+          <ConnectorPoint PointX="6" PointY="7.76562359375" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeStep_Recipe" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.2257692307692296" PointY="10.509095052083335" />
-          <ConnectorPoint PointX="2.5660744349011213" PointY="10.849400256215226" />
-          <ConnectorPoint PointX="2.6839255650988791" PointY="10.967251386412984" />
-          <ConnectorPoint PointX="2.8125" PointY="11.095825821314104" />
-          <ConnectorPoint PointX="2.8125" PointY="18.961293945312498" />
+          <ConnectorPoint PointX="0.541670625" PointY="10.509095052083335" />
+          <ConnectorPoint PointX="0.541670625" PointY="18.961293945312498" />
           <ConnectorPoint PointX="3" PointY="18.961293945312498" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeTag_Recipe" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="10.452555590544874" />
-          <ConnectorPoint PointX="2.5660744349011213" PointY="10.768630025445994" />
-          <ConnectorPoint PointX="2.6839255650988791" PointY="10.886481155643752" />
-          <ConnectorPoint PointX="2.71875" PointY="10.921305590544874" />
-          <ConnectorPoint PointX="2.71875" PointY="10.717597153846153" />
-          <ConnectorPoint PointX="3.0011528461538459" PointY="11" />
+          <ConnectorPoint PointX="0.64583781250000016" PointY="10.509095052083335" />
+          <ConnectorPoint PointX="0.64583781250000016" PointY="11.53125" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.53125" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.53125" />
+          <ConnectorPoint PointX="3" PointY="11.53125" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_RecipeIngredient" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.5319230769230767" PointY="10.768697916666667" />
-          <ConnectorPoint PointX="6.5319230769230767" PointY="11.018697916666667" />
-          <ConnectorPoint PointX="6.9784615384615378" PointY="11.018697916666667" />
-          <ConnectorPoint PointX="6.9784615384615378" PointY="10.768697916666667" />
+          <ConnectorPoint PointX="6.7978846153846151" PointY="7.25" />
+          <ConnectorPoint PointX="6.7978846153846151" PointY="7" />
+          <ConnectorPoint PointX="7.4676923076923067" PointY="7" />
+          <ConnectorPoint PointX="7.4676923076923067" PointY="7.25" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_State" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.078125" PointY="14.125" />
-          <ConnectorPoint PointX="5.078125" PointY="7.43749875" />
-          <ConnectorPoint PointX="6" PointY="7.43749875" />
+          <ConnectorPoint PointX="5.03515625" PointY="14.125" />
+          <ConnectorPoint PointX="5.03515625" PointY="7.4687471874999991" />
+          <ConnectorPoint PointX="6" PointY="7.4687471874999991" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeIngredient_Unit" ManuallyRouted="false">
           <ConnectorPoint PointX="5.25" PointY="22.297841796875" />
-          <ConnectorPoint PointX="6.2347090384615385" PointY="22.297841796875" />
-          <ConnectorPoint PointX="6.2347090384615385" PointY="10.768697916666667" />
+          <ConnectorPoint PointX="7.125" PointY="22.297841796875" />
+          <ConnectorPoint PointX="7.125" PointY="10.768697916666667" />
         </AssociationConnector>
         <AssociationConnector Association="FoodFightModel.FK_RecipeTag_Tag" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="16.251933593750003" />
-          <ConnectorPoint PointX="2.7291666666666665" PointY="16.251933593750003" />
-          <ConnectorPoint PointX="2.8958333333333335" PointY="16.251933593750003" />
           <ConnectorPoint PointX="3.34375" PointY="16.251933593750003" />
           <ConnectorPoint PointX="3.34375" PointY="12.980286458333332" />
         </AssociationConnector>

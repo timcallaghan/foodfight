@@ -135,18 +135,24 @@ namespace FoodFightSilverlightClient.Web
 
             public byte[] Picture { get; set; }
 
+            [Include]
             public EntityCollection<RecipeEquipmentTag> RecipeEquipmentTags { get; set; }
 
+            [Include]
             public EntityCollection<RecipeFoodGroup> RecipeFoodGroups { get; set; }
 
             public int RecipeID { get; set; }
 
+            [Include]
             public EntityCollection<RecipeIngredient> RecipeIngredients { get; set; }
 
+            [Include]
             public EntityCollection<RecipeStep> RecipeSteps { get; set; }
 
+            [Include]
             public EntityCollection<RecipeTag> RecipeTags { get; set; }
 
+            [DefaultValue(4)]
             public int Serves { get; set; }
         }
     }

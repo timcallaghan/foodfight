@@ -519,6 +519,17 @@ namespace FoodFightSilverlightClient.Web
         }
         
         /// <summary>
+        /// Gets the set of <see cref="Recipe"/> entities that have been loaded into this <see cref="FoodFightDomainContext"/> instance.
+        /// </summary>
+        public EntitySet<Recipe> Recipes
+        {
+            get
+            {
+                return base.EntityContainer.GetEntitySet<Recipe>();
+            }
+        }
+        
+        /// <summary>
         /// Gets the set of <see cref="RecipeEquipmentTag"/> entities that have been loaded into this <see cref="FoodFightDomainContext"/> instance.
         /// </summary>
         public EntitySet<RecipeEquipmentTag> RecipeEquipmentTags
@@ -548,17 +559,6 @@ namespace FoodFightSilverlightClient.Web
             get
             {
                 return base.EntityContainer.GetEntitySet<RecipeIngredient>();
-            }
-        }
-        
-        /// <summary>
-        /// Gets the set of <see cref="Recipe"/> entities that have been loaded into this <see cref="FoodFightDomainContext"/> instance.
-        /// </summary>
-        public EntitySet<Recipe> Recipes
-        {
-            get
-            {
-                return base.EntityContainer.GetEntitySet<Recipe>();
             }
         }
         
@@ -645,6 +645,19 @@ namespace FoodFightSilverlightClient.Web
         {
             this.ValidateMethod("GetIngredientsQuery", null);
             return base.CreateQuery<Ingredient>("GetIngredients", null, false, true);
+        }
+        
+        /// <summary>
+        /// Gets an EntityQuery instance that can be used to load <see cref="Recipe"/> entities using the 'GetRecipe' query.
+        /// </summary>
+        /// <param name="RecipeID">The value for the 'RecipeID' parameter of the query.</param>
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="Recipe"/> entities.</returns>
+        public EntityQuery<Recipe> GetRecipeQuery(int RecipeID)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("RecipeID", RecipeID);
+            this.ValidateMethod("GetRecipeQuery", parameters);
+            return base.CreateQuery<Recipe>("GetRecipe", parameters, false, false);
         }
         
         /// <summary>
@@ -806,6 +819,25 @@ namespace FoodFightSilverlightClient.Web
             /// <param name="result">The IAsyncResult returned from 'BeginGetIngredients'.</param>
             /// <returns>The 'QueryResult' returned from the 'GetIngredients' operation.</returns>
             QueryResult<Ingredient> EndGetIngredients(IAsyncResult result);
+            
+            /// <summary>
+            /// Asynchronously invokes the 'GetRecipe' operation.
+            /// </summary>
+            /// <param name="RecipeID">The value for the 'RecipeID' parameter of this action.</param>
+            /// <param name="callback">Callback to invoke on completion.</param>
+            /// <param name="asyncState">Optional state object.</param>
+            /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
+            [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/FoodFightDomainService/GetRecipeDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
+            [OperationContract(AsyncPattern=true, Action="http://tempuri.org/FoodFightDomainService/GetRecipe", ReplyAction="http://tempuri.org/FoodFightDomainService/GetRecipeResponse")]
+            [WebGet()]
+            IAsyncResult BeginGetRecipe(int RecipeID, AsyncCallback callback, object asyncState);
+            
+            /// <summary>
+            /// Completes the asynchronous operation begun by 'BeginGetRecipe'.
+            /// </summary>
+            /// <param name="result">The IAsyncResult returned from 'BeginGetRecipe'.</param>
+            /// <returns>The 'QueryResult' returned from the 'GetRecipe' operation.</returns>
+            QueryResult<Recipe> EndGetRecipe(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'GetRecipeEquipmentTags' operation.
@@ -1544,6 +1576,7 @@ namespace FoodFightSilverlightClient.Web
         /// Gets or sets the 'Serves' value.
         /// </summary>
         [DataMember()]
+        [DefaultValue(4)]
         public int Serves
         {
             get

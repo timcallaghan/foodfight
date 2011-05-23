@@ -135,6 +135,11 @@ namespace FoodFightSilverlightClient.Web
             return this.ObjectContext.Recipes;
         }
 
+        public Recipe GetRecipe(int RecipeID)
+        {
+            return this.ObjectContext.Recipes.Include("RecipeEquipmentTags").Include("RecipeFoodGroups").Include("RecipeIngredients").Include("RecipeSteps").Include("RecipeTags").Where(R => R.RecipeID == RecipeID).FirstOrDefault();
+        }
+
         public void InsertRecipe(Recipe recipe)
         {
             if ((recipe.EntityState != EntityState.Detached))
