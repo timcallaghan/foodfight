@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://ftp.arbaureal.com/foodfight.arbaureal.com/wwwroot" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Release" publishMethod="FTP" replaceMatchingFiles="True" userName="spoida" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm4PrsHs0uES4j808cAKI7QAAAAACAAAAAAAQZgAAAAEAACAAAACSmmjuvZe8LmQSN8cwf6PUE1QqvsxLVZKl+kfderTt5wAAAAAOgAAAAAIAACAAAABC4q5O/hZigrAG43utIHfznwxRmQGI3+DJDfR8mcDuOiAAAADwyNASVxOqK4sSBSrGlGIPWWS3xK4hhb5xDtao+CsGwEAAAABXFtfnv7sYXiX5+7BzuThQwRB9vNqL7To5yrlcjM6+Sc02KqNyWEZ7T8sGdOph4q7gnejmpXF92oVmx8/DBAoV" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="05/23/2011 19:07:48" />
+    <file relUrl="ClientBin/FoodFightSilverlightClient.xap" publishTime="05/23/2011 19:04:59" />
+    <file relUrl="bin/FoodFightSilverlightClient.Web.pdb" publishTime="05/23/2011 23:25:40" />
+    <file relUrl="FoodFightSilverlightClientTestPage.html" publishTime="05/21/2011 12:23:48" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.Server.dll" publishTime="05/06/2010 14:24:00" />
+    <file relUrl="FoodFightSilverlightClientTestPage.aspx" publishTime="05/21/2011 12:23:47" />
+    <file relUrl="bin/FoodFightSilverlightClient.Web.dll" publishTime="05/23/2011 23:25:40" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.Hosting.dll" publishTime="05/06/2010 14:24:00" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.Hosting.xml" publishTime="05/06/2010 14:22:06" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.EntityFramework.xml" publishTime="05/06/2010 14:22:04" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.EntityFramework.dll" publishTime="05/06/2010 14:23:58" />
+    <file relUrl="Silverlight.js" publishTime="05/21/2011 12:23:48" />
+    <file relUrl="bin/System.ServiceModel.DomainServices.Server.xml" publishTime="05/06/2010 14:22:02" />
+  </publishProfile>
+</publishData>
