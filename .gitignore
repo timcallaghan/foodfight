@@ -1,0 +1,18 @@
+
+# /FoodFight/FoodFight/
+/FoodFight/FoodFight/*.docstates
+/FoodFight/FoodFight/*.suo
+
+# /FoodFight/FoodFight/ComboBoxExtensions/
+/FoodFight/FoodFight/ComboBoxExtensions/*.user
+/FoodFight/FoodFight/ComboBoxExtensions/Bin
+/FoodFight/FoodFight/ComboBoxExtensions/obj
+
+# /FoodFight/FoodFight/FoodFightSilverlightClient/
+/FoodFight/FoodFight/FoodFightSilverlightClient/*.user
+/FoodFight/FoodFight/FoodFightSilverlightClient/Bin
+/FoodFight/FoodFight/FoodFightSilverlightClient/obj
+
+# /FoodFight/FoodFight/FoodFightSilverlightClient.Web/
+/FoodFight/FoodFight/FoodFightSilverlightClient.Web/*.user
+/FoodFight/FoodFight/FoodFightSilverlightClient.Web/obj
